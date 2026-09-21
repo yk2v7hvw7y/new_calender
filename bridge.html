@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>班级日历</title>
+<style>
+body{margin:0;display:flex;align-items:center;justify-content:center;height:100vh;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei",sans-serif;
+background:#f4f6fb;color:#161a23}
+.box{text-align:center;padding:30px}
+.spinner{width:40px;height:40px;border:4px solid #ddd;border-top-color:#3b6cf6;
+border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+p{margin:8px 0;font-size:15px;color:#5f6a7d}
+a{color:#3b6cf6}
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="spinner"></div>
+  <p>正在跳转...</p>
+  <p id="status"></p>
+</div>
+<script>
+/* ========== 配置区 ========== */
+// 默认网址（如果 config.json 读取失败时使用）
+var CONFIG_URL = "https://kiana222.github.io/calendar/";
+
+// 尝试从同目录的 config.json 读取最新链接
+fetch("config.json").then(function(r){
+  return r.json();
+}).then(function(cfg){
+  if(cfg && cfg.url){
+    CONFIG_URL = cfg.url;
+  }
+  // 跳转到目标网址
+  window.location.href = CONFIG_URL;
+}).catch(function(){
+  // config.json 不存在或读取失败，使用默认配置
+  document.getElementById("status").textContent = "使用默认链接: " + CONFIG_URL;
+  window.location.href = CONFIG_URL;
+});
+</script>
+</body>
+</html>
