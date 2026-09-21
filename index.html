@@ -263,7 +263,7 @@ header,.toolbar,.no-print,.acts,.pills,footer{display:none!important}body{backgr
         <button class="ghost" data-act="save-gh-token">保存 Token</button>
       </div>
       <p class="hint" style="margin-bottom:0">Token 获取（一次性）：GitHub 右上角头像 → Settings → 左下 Developer settings → Personal access tokens → Fine-grained tokens → Generate new token，
-        Repository access 选 Only select repositories 并勾选 calendar，Permissions 里 Contents 设为 Read and write，生成后粘贴到上面。有了它，「一键发布」才能替你提交 data.json。</p>
+        Repository access 选 Only select repositories 并勾选 new_calender，Permissions 里 Contents 设为 Read and write，生成后粘贴到上面。有了它，「一键发布」才能替你提交 data.json。</p>
     </div>
     <h2 class="sec">分类管理</h2>
     <div class="card" style="padding:18px">
@@ -575,7 +575,7 @@ function trackNew(){
  prefs.newIds=fresh;prefs.seenIds=ids;savePrefs();
  return Object.keys(fresh).length;}
 function loadPrefs(){var base={groups:{},overrides:{},done:{},removed:{},seenIds:null,newIds:{},autoPrune:true,alertHours:24,theme:'auto',hideDone:false,
- siteUrl:'https://kiana222.github.io/calendar/'};
+ siteUrl:'https://yk2v7hvw7y.github.io/new_calender/'};
  try{var p=JSON.parse(lsGet(PREF_KEY)||'{}');for(var k in p)base[k]=p[k];}catch(e){}
  if(!base.groups)base.groups={};if(!base.overrides)base.overrides={};if(!base.done)base.done={};
  if(!base.removed)base.removed={};if(!base.newIds)base.newIds={};return base;}
@@ -825,9 +825,9 @@ function copyLink(){var box=$('#linkBox');
 /* ---------- 一键发布：浏览器直接调 GitHub API，替你完成"打开GitHub→粘贴→Commit" ---------- */
 function utf8B64(str){return btoa(unescape(encodeURIComponent(str)));}
 function ghRepoFromSite(){
- var site=(prefs.siteUrl||'https://kiana222.github.io/calendar/').trim();
- var owner=(site.match(/https:\/\/([a-z0-9-]+)\.github\.io/i)||[])[1]||'kiana222';
- var repo=(site.match(/\.github\.io\/([^\/#?]+)/i)||[])[1]||'calendar';
+ var site=(prefs.siteUrl||'https://yk2v7hvw7y.github.io/new_calender/').trim();
+ var owner=(site.match(/https:\/\/([a-z0-9-]+)\.github\.io/i)||[])[1]||'yk2v7hvw7y';
+ var repo=(site.match(/\.github\.io\/([^\/#?]+)/i)||[])[1]||'new_calender';
  return {owner:owner,repo:repo};}
 function publishGitHub(){
  var token=(lsGet(GH_KEY)||'').trim();
@@ -853,7 +853,7 @@ function publishGitHub(){
   return res.json();})
  /* 第三步：成功后自动复制固定网址，粘到 QQ 群即可 */
  .then(function(){
-  doCopy((prefs.siteUrl||'https://kiana222.github.io/calendar/'),true);
+  doCopy((prefs.siteUrl||'https://yk2v7hvw7y.github.io/new_calender/'),true);
   toast('已提交到 GitHub！固定网址已复制，粘到群里就行（Pages 约1分钟后生效）',6500);})
  .catch(function(err){toast('发布失败：'+err.message,5200);})
  .finally(function(){if(pub){pub.disabled=false;pub.textContent='一键发布到 GitHub';}});}
