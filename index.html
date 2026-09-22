@@ -825,10 +825,12 @@ function copyLink(){var box=$('#linkBox');
 /* ---------- 一键发布：浏览器直接调 GitHub API，替你完成"打开GitHub→粘贴→Commit" ---------- */
 function utf8B64(str){return btoa(unescape(encodeURIComponent(str)));}
 function ghRepoFromSite(){
- var site=(prefs.siteUrl||'https://yk2v7hvw7y.github.io/new_calender/').trim();
- var owner=(site.match(/https:\/\/([a-z0-9-]+)\.github\.io/i)||[])[1]||'yk2v7hvw7y';
- var repo=(site.match(/\.github\.io\/([^\/#?]+)/i)||[])[1]||'new_calender';
- return {owner:owner,repo:repo};}
+ /* 优先从当前页面 URL 自动推断，不再依赖 prefs.siteUrl 的历史值 */
+ var loc=window.location.href.toLowerCase();
+ var m=loc.match(/https:\/\/([a-z0-9-]+)\.github\.io\/([^\/#?]+)/i);
+ if(m)return {owner:m[1],repo:m[2]};
+ /* 兜底：实在推断不出来再用默认值 */
+ return {owner:'yk2v7hvw7y',repo:'new_calender'};}
 function publishGitHub(){
  var token=(lsGet(GH_KEY)||'').trim();
  if(!token){toast('先填 GitHub Token，再点「保存 Token」',3400);return;}
@@ -854,7 +856,8 @@ function publishGitHub(){
   return res.json();})
  /* 第三步：成功后自动复制固定网址，粘到 QQ 群即可 */
  .then(function(){
-  doCopy((prefs.siteUrl||'https://yk2v7hvw7y.github.io/new_calender/'),true);
+  var copyUrl=window.location.origin+window.location.pathname;
+  doCopy(copyUrl,true);
   toast('已提交到 GitHub！固定网址已复制，粘到群里就行（Pages 约1分钟后生效）',6500);})
  .catch(function(err){toast('发布失败：'+err.message,5200);})
  .finally(function(){if(pub){pub.disabled=false;pub.textContent='一键发布到 GitHub';}});}
