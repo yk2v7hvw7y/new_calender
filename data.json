@@ -1,0 +1,228 @@
+{
+  "class_name": "2026 级班级日历",
+  "updated_at": "2026-09-22T03:45:33.316Z",
+  "categories": [
+    {
+      "id": "all",
+      "name": "全体",
+      "color": "#3b6cf6",
+      "note": "全班都要做的事",
+      "default_on": true
+    },
+    {
+      "id": "study",
+      "name": "学业",
+      "color": "#7c5cff",
+      "note": "选课、四六级、竞赛报名",
+      "default_on": true
+    },
+    {
+      "id": "party",
+      "name": "入党",
+      "color": "#e5484d",
+      "note": "只对提交入党材料的同学",
+      "default_on": true
+    },
+    {
+      "id": "league",
+      "name": "团员",
+      "color": "#f0883e",
+      "note": "团员档案、入团申请",
+      "default_on": true
+    },
+    {
+      "id": "aid",
+      "name": "资助",
+      "color": "#12a594",
+      "note": "困难认定、绿色通道",
+      "default_on": true
+    },
+    {
+      "id": "dorm",
+      "name": "宿舍",
+      "color": "#0ea5e9",
+      "note": "寝室公约等宿舍事务",
+      "default_on": true
+    }
+  ],
+  "events": [
+    {
+      "id": "party_apply",
+      "title": "入党申请书",
+      "category": "party",
+      "start_date": "2026-09-23",
+      "detail": "截止时间改为 9 月 23 日。入党申请书的落款时间还没写的，统一写到 20 号；已经写好的无需修改。交过申请书和自传的同学，还需填写【入党申请人信息收集】表，表格链接以群里最新通知为准。",
+      "note": "原通知为 9 月 19 日 17:00 收齐，后改为 9 月 23 日",
+      "source": "群通知 + 手写清单",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "emu7xl15w",
+      "title": "困难认定",
+      "category": "all",
+      "end_date": "2026-09-22",
+      "end_time": "12:00",
+      "detail": "学院：本科生院\n系：不填 \n专业：工科试验班（未来信息",
+      "note": "具体通知请在大群查找信息里搜索困难认定找辅导员发送的信息",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "emu94sqfp",
+      "title": "入团线上表格",
+      "category": "all",
+      "end_date": "2026-09-24",
+      "end_time": "17:00",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "emu94tpuj",
+      "title": "入团申请书",
+      "category": "all",
+      "end_date": "2026-09-25",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "leave_rules",
+      "title": "请假与归寝须知",
+      "category": "all",
+      "detail": "① 每晚 23:00 必须准时归寝（特殊突发情况除外）。\n② 离校外出：至少提前 1 天，在上午 8:30-12:00、下午 14:00-17:30 向苏老师说明请假理由并提供证明（建议同时在班级办事簿提交）。家长需按下文模板发短信到 19115289785，把截图发给辅导员助理审核，再进【智慧学工】-【请销假登记】完成请假 / 销假。\n③ 周末请假：按普通请假手续办理（流程见群里 PDF）；审批时间是星期四，周五和周末的临时申请不受理。\n④ 长期周末假条：家住主城、需要长期周末回家的同学可办“周末长期请假手续”（流程见 PDF），申请书国庆后交。\n⑤ 课程请假：先向任课老师（不是助教）请假，老师同意后在工作时间（8:30-11:30、14:30-17:30）向苏老师出示证明；再按上面的流程向辅导员申请；需要纸质假条的，工作时间到理科楼 117-3 办理。\n⑥ 家长短信模板：我是xx班xx同学家长xxx，我已知晓孩子申请离校的情况，具体离校时间为xxx，返校时间为xxx，去向地点:xxx，请假理由:xxx（写清楚），请假期间是/否有课程。我们承诺，保证严格遵守法律法规与校纪校规，高度注意途中个人人身安全，离校后涉及本人的一切安全责任由请假人及家长负责。\n提醒：务必使用这个模板，短信里要写清离校、返校时间和期间是否有课，否则会影响请假审批。",
+      "source": "群通知【关于请假】",
+      "links": [
+        {
+          "label": "班级办事簿（通知查询）",
+          "url": "https://docs.qq.com/sheet/DWkhOdnNsa3dLTFhK?tab=jyfkin"
+        }
+      ],
+      "default_on": true
+    },
+    {
+      "id": "cet",
+      "title": "英语四六级报名（2026 年 12 月考试）",
+      "category": "study",
+      "start_date": "2026-09-20",
+      "start_time": "09:00",
+      "end_date": "2026-09-28",
+      "end_time": "17:00",
+      "detail": "报名时间：2026 年 9 月 20 日 9:00 开始，9 月 28 日 17:00 截止。登录「全国大学英语四、六级考试（CET）」网站注册报名，核对信息、上传照片后缴费。（群通知里出现过 9 月 26 日截止的说法，教务老师和教务处通知均为 9 月 28 日 17:00，以教务处为准。）",
+      "note": "",
+      "source": "教务老师通知 + 群通知",
+      "links": [
+        {
+          "label": "CET 报名网站 cet-bm.neea.edu.cn",
+          "url": "http://cet-bm.neea.edu.cn/"
+        },
+        {
+          "label": "教务处通知原文",
+          "url": "https://jwc.cqu.edu.cn/info/1080/6178.htm"
+        }
+      ],
+      "default_on": true
+    },
+    {
+      "id": "green_channel",
+      "title": "绿色通道",
+      "category": "aid",
+      "start_date": "2026-09-23",
+      "start_time": "12:00",
+      "detail": "9 月 23 日中午 12 点以前完成。需要信封的找负责人拿。",
+      "note": "",
+      "source": "手写清单 + 群通知",
+      "links": [],
+      "default_on": false
+    },
+    {
+      "id": "league_relation",
+      "title": "智慧团建 · 团组织关系转接",
+      "category": "league",
+      "start_date": "2026-09-25",
+      "detail": "2026 年团员组织关系要通过「智慧团建」系统线上转接，同时线下接收团员档案、注册团员证，线上线下同时进行。9 月 25 日之前，请在智慧团建上发起团组织关系转接申请；申请发出后，及时提醒原所在团组织审批。团支部名称示例：重庆市重庆大学本科生院未来信息类 2026 级 1 班团支部。北京、福建、广东的新生团员可加入答疑 QQ 群：1109171535。",
+      "note": "",
+      "source": "团组织关系转接通知",
+      "links": [
+        {
+          "label": "智慧团建 zhtj.youth.cn",
+          "url": "https://zhtj.youth.cn/zhtj/"
+        }
+      ],
+      "default_on": false
+    },
+    {
+      "id": "fitness_test",
+      "title": "体测免测 / 缓测申请",
+      "category": "study",
+      "start_date": "2026-10-31",
+      "detail": "免测：因疾病或残疾丧失运动能力、本学年无法参加测试的同学可申请，需提供诊断证明。缓测：因感冒、摔伤、生理期等突发情况无法参加本次集中测试及后续补测，但下学期可正常参加测试的同学可申请。两种都要在国庆节后把材料提交给辅导员签字，签字后在 2026 年 10 月 31 日前把免测、缓测申请材料提交到虎溪校园体育学院 201 室。因突发情况无法参加本次集中测试、但本学期可以参加补测的同学，向所在学院报备即可，不需要办缓测。以上情况都要填写体测缓测登记表。",
+      "note": "",
+      "source": "体育学院体测通知",
+      "links": [
+        {
+          "label": "体测缓测登记表（腾讯文档）",
+          "url": "https://docs.qq.com/form/page/DZWxWUUhPZ1NMdWNm"
+        }
+      ],
+      "default_on": true
+    },
+    {
+      "id": "national_day",
+      "title": "国庆放假与订票",
+      "category": "all",
+      "detail": "国庆放假通知暂未发布，如无特殊情况应与国家法定节假日放假时间一致。需要订票的同学注意：9 月 30 日的安排还不确定（课表还没出，不排除当晚有课），不要订太提前的票，避免改签、退票的麻烦。国庆假期离校请假流程，等学校相关文件发布后会再通知。",
+      "note": "",
+      "source": "群通知【20250915通知1】",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "train_ticket",
+      "title": "火车票学生优惠",
+      "category": "all",
+      "detail": "学籍还没有上学信网，所以暂时无法购买学生票，往年大致十月后可绑定。学生票一人一年只能买四次，建议留到寒假回家时用。近期会发学生证给大家填。",
+      "note": "",
+      "source": "群通知",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "safety_notice",
+      "title": "假期安全须知",
+      "category": "all",
+      "detail": "群里发过《假期安全》须知，请抽空认真阅读。",
+      "note": "",
+      "source": "群通知",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "emubes481",
+      "title": "测试",
+      "category": "all",
+      "start_date": null,
+      "start_time": null,
+      "end_date": null,
+      "end_time": null,
+      "detail": "",
+      "note": "",
+      "source": "",
+      "links": [],
+      "default_on": true
+    },
+    {
+      "id": "emuc4enfs",
+      "title": "测试2",
+      "category": "all",
+      "start_date": null,
+      "start_time": null,
+      "end_date": null,
+      "end_time": null,
+      "detail": "",
+      "note": "",
+      "source": "",
+      "links": [],
+      "default_on": true
+    }
+  ]
+}
