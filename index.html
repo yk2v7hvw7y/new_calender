@@ -849,7 +849,8 @@ function publishGitHub(){
   return fetch(api,{method:'PUT',headers:Object.assign({'Content-Type':'application/json'},head),
    body:JSON.stringify(body)});})
  .then(function(res){
-  if(!res.ok)throw new Error('提交失败(HTTP '+res.status+')');
+  if(!res.ok)return res.json().catch(function(){return{};}).then(function(e){
+   throw new Error('提交失败(HTTP '+res.status+(e.message?'：'+e.message:'')+')');});
   return res.json();})
  /* 第三步：成功后自动复制固定网址，粘到 QQ 群即可 */
  .then(function(){
