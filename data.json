@@ -1,6 +1,6 @@
 {
-  "class_name": "2026 级班级日历",
-  "updated_at": "2026-09-22T03:55:52.765Z",
+  "class_name": "2026 级未来信息类 班级日历",
+  "updated_at": "2026-09-23T09:21:22.066Z",
   "categories": [
     {
       "id": "all",
@@ -13,28 +13,28 @@
       "id": "study",
       "name": "学业",
       "color": "#7c5cff",
-      "note": "选课、四六级、竞赛报名",
+      "note": "考试报名、竞赛、体测",
       "default_on": true
     },
     {
       "id": "party",
       "name": "入党",
       "color": "#e5484d",
-      "note": "只对提交入党材料的同学",
+      "note": "申请入党的同学",
       "default_on": true
     },
     {
       "id": "league",
       "name": "团员",
       "color": "#f0883e",
-      "note": "团员档案、入团申请",
+      "note": "团员档案、团组织关系",
       "default_on": true
     },
     {
       "id": "aid",
       "name": "资助",
       "color": "#12a594",
-      "note": "困难认定、绿色通道",
+      "note": "困难认定、绿色通道、助学贷款",
       "default_on": true
     },
     {
@@ -43,9 +43,56 @@
       "color": "#0ea5e9",
       "note": "寝室公约等宿舍事务",
       "default_on": true
+    },
+    {
+      "id": "cmucu90zd",
+      "name": "入团",
+      "color": "#8a94a6",
+      "note": "",
+      "default_on": true
+    },
+    {
+      "id": "cmucu9rj8",
+      "name": "行政",
+      "color": "#8a94a6",
+      "note": "",
+      "default_on": true
     }
   ],
   "events": [
+    {
+      "id": "cadre_interview",
+      "title": "班干部竞选面试",
+      "category": "cmucu9rj8",
+      "start_date": "2026-09-23",
+      "start_time": "18:00",
+      "end_date": "2026-09-23",
+      "end_time": "21:00",
+      "detail": "时间：9 月 23 日 18:00-21:00，请提前 5 分钟到场完成候场签到，逾期未到视为自动放弃竞选资格。\n地点：重庆大学沙坪坝校区八教；候场教室 A8211，面试教室 A8213、A8214。\n形式：无领导小组讨论（群面），重点考察沟通表达、团队协作、组织统筹、临场应变等综合素养。\n准备：每人准备 1 分钟以内的自我介绍，内容简洁精炼。\n提示：提前规划出行时间、熟悉校区场地，准时到场并遵守现场秩序；面试过程保持从容自信、文明礼貌；无故缺席视为自动放弃。",
+      "note": "具体分组和教室安排见群里发的表格图片",
+      "source": "群通知【班干部竞选面试安排】",
+      "links": [],
+      "files": [],
+      "default_on": true
+    },
+    {
+      "id": "course_makeup",
+      "title": "选课补选（第五阶段）",
+      "category": "study",
+      "start_date": "2026-09-23",
+      "start_time": "09:00",
+      "end_date": "2026-09-23",
+      "end_time": "23:00",
+      "detail": "第五阶段（学生补选）：9 月 23 日 9:00 - 23:00。\n选课地址：移动端——微信公众号搜索「重庆大学本科生院」，进入后点右下角「智慧教务」，用账号密码登录；PC 端——https://my.cqu.edu.cn/enroll\n补选路径：智慧教务（移动端）→ 申请服务 → 点「选课」；智慧教务（PC 端）→ 选课管理 → 点「选课」。",
+      "source": "选课通知",
+      "links": [
+        {
+          "label": "PC 端选课入口 my.cqu.edu.cn/enroll",
+          "url": "https://my.cqu.edu.cn/enroll"
+        }
+      ],
+      "default_on": true
+    },
     {
       "id": "party_apply",
       "title": "入党申请书",
@@ -58,31 +105,33 @@
       "default_on": true
     },
     {
-      "id": "emu7xl15w",
-      "title": "困难认定",
-      "category": "all",
-      "end_date": "2026-09-22",
-      "end_time": "12:00",
-      "detail": "学院：本科生院\n系：不填 \n专业：工科试验班（未来信息",
-      "note": "具体通知请在大群查找信息里搜索困难认定找辅导员发送的信息",
-      "links": [],
-      "default_on": true
-    },
-    {
       "id": "emu94sqfp",
       "title": "入团线上表格",
-      "category": "all",
+      "category": "cmucu90zd",
+      "start_date": null,
+      "start_time": null,
       "end_date": "2026-09-24",
       "end_time": "17:00",
+      "detail": "",
+      "note": "",
+      "source": "",
       "links": [],
+      "files": [],
       "default_on": true
     },
     {
       "id": "emu94tpuj",
       "title": "入团申请书",
-      "category": "all",
+      "category": "cmucu90zd",
+      "start_date": null,
+      "start_time": null,
       "end_date": "2026-09-25",
+      "end_time": null,
+      "detail": "",
+      "note": "",
+      "source": "",
       "links": [],
+      "files": [],
       "default_on": true
     },
     {
@@ -121,18 +170,6 @@
         }
       ],
       "default_on": true
-    },
-    {
-      "id": "green_channel",
-      "title": "绿色通道",
-      "category": "aid",
-      "start_date": "2026-09-23",
-      "start_time": "12:00",
-      "detail": "9 月 23 日中午 12 点以前完成。需要信封的找负责人拿。",
-      "note": "",
-      "source": "手写清单 + 群通知",
-      "links": [],
-      "default_on": false
     },
     {
       "id": "league_relation",
@@ -197,59 +234,52 @@
       "default_on": true
     },
     {
-      "id": "emubes481",
-      "title": "测试",
+      "id": "emucafok9",
+      "title": "关于收取军训报告的通知",
       "category": "all",
       "start_date": null,
       "start_time": null,
-      "end_date": null,
-      "end_time": null,
-      "detail": "",
+      "end_date": "2026-09-23",
+      "end_time": "23:59",
+      "detail": "11连1排全体同学：\n根据军训工作安排，现需收取军训报告。请按要求提交：\n1. 格式要求：统一编辑为Word文档（.doc或.docx）。\n2. 命名要求：文件命名为“学号＋姓名＋11连1排XX班（军训班）”。\n例如：20260001张三11连1排1班。\n其中“XX班”请填写本人所在军训班。\n交到如下邮箱中tangheng12138@outlook.com",
       "note": "",
       "source": "",
-      "links": [],
+      "links": [
+        {
+          "label": "tangheng12138@outlook.com",
+          "url": "tanghe"
+        }
+      ],
       "default_on": true
     },
     {
-      "id": "emuc4enfs",
-      "title": "测试2",
-      "category": "all",
-      "start_date": null,
+      "id": "emudw09yd",
+      "title": "智慧慕课学习",
+      "category": "study",
+      "start_date": "2026-09-23",
       "start_time": null,
-      "end_date": null,
+      "end_date": "2026-10-18",
       "end_time": null,
       "detail": "",
       "note": "",
       "source": "",
       "links": [],
+      "files": [],
       "default_on": true
     },
     {
-      "id": "emuc514d8",
-      "title": "测试3",
-      "category": "all",
-      "start_date": null,
+      "id": "emudw0sug",
+      "title": "智慧慕课考试",
+      "category": "study",
+      "start_date": "2026-10-19",
       "start_time": null,
-      "end_date": null,
+      "end_date": "2026-10-23",
       "end_time": null,
       "detail": "",
       "note": "",
       "source": "",
       "links": [],
-      "default_on": true
-    },
-    {
-      "id": "emuc554mj",
-      "title": "测试5",
-      "category": "all",
-      "start_date": null,
-      "start_time": null,
-      "end_date": null,
-      "end_time": null,
-      "detail": "",
-      "note": "",
-      "source": "",
-      "links": [],
+      "files": [],
       "default_on": true
     }
   ]
