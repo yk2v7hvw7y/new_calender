@@ -984,7 +984,12 @@ function cardHTML(ev){var c=catOf(ev.category),li=leftInfo(ev),done=isDone(ev);
  +'<p class="meta"><span>'+esc(rangeText(ev))+'</span>'+(ev.note?'<span class="note">备注：'+esc(ev.note)+'</span>':'')+'</p>'
  +(ev.detail?'<p class="detail">'+esc(ev.detail)+'</p>':'')
  +(ev.links&&ev.links.length?'<p class="links">'+ev.links.map(function(l){return '<a href="'+esc(l.url)+'" target="_blank" rel="noopener noreferrer">'+esc(l.label||'打开链接')+'</a>';}).join('')+'</p>':'')
- +((ev.files&&ev.files.length)?'<p class="links">'+ev.files.map(function(f){return '<a href="'+esc(f.url)+'"'+(f.url&&f.url.indexOf('data:')===0?' download="'+esc(f.name)+'"':' target="_blank" rel="noopener noreferrer"')+'>📎 '+esc(f.name)+'</a>';}).join('')+'</p>':'')
+ +((ev.files&&ev.files.length)?'<p class="links">'+ev.files.map(function(f,i){
+   /* 内嵌大文件：HTML 里只输出文件名+索引，不输出 data 长串，避免正则扫描和超长 HTML 导致卡顿；
+      点击时再从内存数据里取出真正的下载地址（动作 att-dl） */
+   if(f.url&&f.url.indexOf('data:')===0)
+    return '<a href="#" data-act="att-dl" data-id="'+ev.id+'" data-fi="'+i+'" title="点击下载">📎 '+esc(f.name)+'</a>';
+   return '<a href="'+esc(f.url)+'" target="_blank" rel="noopener noreferrer">📎 '+esc(f.name)+'</a>';}).join('')+'</p>':'')
  +(editMode?'<div class="acts"><button class="ghost" data-act="edit" data-id="'+ev.id+'">编辑</button><button class="ghost danger" data-act="del" data-id="'+ev.id+'">删除</button></div>':'')
  +'</div></article>';}
 function sec(title,evs){return '<h2 class="sec">'+esc(title)+'</h2><div class="list">'+evs.map(cardHTML).join('')+'</div>';}
@@ -1154,6 +1159,16 @@ document.addEventListener('click',function(e){var el=e.target.closest('[data-act
  else if(act==='theme'){toggleTheme();}
  else if(act==='print'){window.print();}
  else if(act==='hideDone'){prefs.hideDone=!prefs.hideDone;savePrefs();renderLog();}
+ else if(act==='att-dl'){
+  /* 按需下载内嵌附件：此刻才从内存数据中取出 data 长串，HTML 里从未保存它 */
+  e.preventDefault();
+  var target=null;
+  for(var k=0;k<data.events.length;k++)if(data.events[k].id===id){target=data.events[k];break;}
+  var f=target&&target.files&&target.files[parseInt(el.dataset.fi,10)];
+  if(!f){toast('文件数据不存在（可能已被清理）',3000);return;}
+  var a=document.createElement('a');
+  a.href=f.url;a.download=f.name||'附件';
+  document.body.appendChild(a);a.click();a.remove();}
  else if(act==='prev'){monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()-1,1);renderMonth();}
  else if(act==='next'){monthCursor=new Date(monthCursor.getFullYear(),monthCursor.getMonth()+1,1);renderMonth();}
  else if(act==='today'){monthCursor=new Date();dayFilter=isoOf(new Date());renderMonth();}
