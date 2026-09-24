@@ -1285,7 +1285,12 @@ function uploadToGitHub(file){
    throw new Error('HTTP '+res.status+(e.message?'：'+e.message:''));});
   return res.json();})
  .then(function(info){
-  var url=(info&&info.content&&info.content.download_url)||('https://raw.githubusercontent.com/'+repo+'/main/'+path);
+  /* 不用 raw.githubusercontent.com（国内手机网络常被屏蔽），
+     改走本仓库 GitHub Pages 的同站地址，和网页同域名，手机可正常下载 */
+  var base=(location.origin&&/^https?:/i.test(location.origin))
+   ?location.origin+location.pathname.replace(/[^/]*$/,'')
+   :'https://yk2v7hvw7y.github.io/new_calender/';
+  var url=base+path;
   pendingFiles.push({name:file.name,url:url,size:file.size});
   chosenFile=null;if($('#f-file'))$('#f-file').value='';
   renderFileList();if($('#fileHint'))$('#fileHint').textContent='已上传：'+file.name+'（保存这条日志后生效）';
